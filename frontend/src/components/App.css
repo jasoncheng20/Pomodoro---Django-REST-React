@@ -1,0 +1,14 @@
+.backdrop {
+    background-color: lightskyblue;
+    opacity: 90%;
+    text-align: center;
+}
+
+.buttons {
+    background-color: goldenrod;
+}
+
+.tomato {
+    height: 250px;
+    align-content: center
+}
