@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Pomodoro.css";
 import Timer from "./Timer";
 import StartButton from "./StartButton";
 import StopButton from "./StopButton";
