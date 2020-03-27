@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
+import './style.css';
+import { render } from 'react-dom';
 import Pomodoro from './Pomodoro.js';
 import ShortBreak from './ShortBreak.js';
 import LongBreak from './LongBreak.js';
-import tomato from '../assets/Tomato.gif'
+import tomato from '../assets/tomato_test.png'
 import QuestList from './QuestList.js';
 
 export default class App extends Component {
@@ -63,4 +64,4 @@ export default class App extends Component {
 }
 
 const container = document.getElementById("app");
-ReactDOM.render(<App />, container);
+render(<App />, container);

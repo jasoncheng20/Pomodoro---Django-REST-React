@@ -9,11 +9,14 @@ module.exports = {
           ]
         },
         {
-          test: /\.css$/,
-          use: ['css-loader']
+          test: /\.css$/i,
+          use: [
+            'style-loader',
+            'css-loader'
+          ]
         },
         {
-          test: /\.gif$/,
+          test: /\.(png|svg|jpg|gif)$/,
           use: ['file-loader']
         }
       ]

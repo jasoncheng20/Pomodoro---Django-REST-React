@@ -19,9 +19,14 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^3.4.2",
     "file-loader": "^6.0.0",
+    "loader": "^2.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "style": "0.0.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "style-loader": "^1.1.3"
   }
 }
