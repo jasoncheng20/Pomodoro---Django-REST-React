@@ -4,9 +4,8 @@ import { render } from 'react-dom';
 import Pomodoro from './Pomodoro.js';
 import ShortBreak from './ShortBreak.js';
 import LongBreak from './LongBreak.js';
-// import tomato from '../assets/tomato_test.png'
+import tomato from '../assets/Tomato.gif'
 import QuestList from './QuestList.js';
-// img className = "tomato" src = {tomato}/
 export default class App extends Component {
     constructor(props){
         super(props);
@@ -56,6 +55,7 @@ export default class App extends Component {
                 {showPomodoro && <Pomodoro/>}
                 {showShortBreak && <ShortBreak/>}
                 {showLongBreak && <LongBreak/>}
+                <img className = "tomato" src = {tomato}/>
                 <QuestList/>
             </div>
         )
