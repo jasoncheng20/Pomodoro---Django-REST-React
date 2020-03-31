@@ -43,19 +43,21 @@ export default class App extends Component {
     render(){
         const {showPomodoro, showShortBreak, showLongBreak} = this.state
         return(
-            <div className = 'backdrop'>
-                <h1>Tomodoro Timer</h1>
-                <div className="buttons">
-                    <button onClick={this.displayPomodoro}>Pomodoro</button>
-                    <button onClick={this.displayShortBreak}>Short Break</button>
-                    <button onClick={this.displayLongBreak}>Long Break</button>
+            <div>
+                <div className = 'backdrop'>
+                    <h1>Tomodoro Timer</h1>
+                    <div className="buttons">
+                        <button onClick={this.displayPomodoro}>Pomodoro</button>
+                        <button onClick={this.displayShortBreak}>Short Break</button>
+                        <button onClick={this.displayLongBreak}>Long Break</button>
+                    </div>
+                    <br/>
+                    <br/>
+                    {showPomodoro && <Pomodoro/>}
+                    {showShortBreak && <ShortBreak/>}
+                    {showLongBreak && <LongBreak/>}
+                    <img className = "tomato" src = {tomato}/>
                 </div>
-                <br/>
-                <br/>
-                {showPomodoro && <Pomodoro/>}
-                {showShortBreak && <ShortBreak/>}
-                {showLongBreak && <LongBreak/>}
-                <img className = "tomato" src = {tomato}/>
                 <QuestList/>
             </div>
         )

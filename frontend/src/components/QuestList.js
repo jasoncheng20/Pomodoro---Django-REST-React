@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
 
 export default class QuestList extends Component {
   constructor(props) {
@@ -33,15 +32,21 @@ export default class QuestList extends Component {
 
   render() {
     return (
-      <ul>
-        {this.state.data.map(quest => {
-          return (
-            <li key={quest.id}>
-              {quest.content} | {quest.difficulty}
-            </li>
-          );
-        })}
-      </ul>
+      <div>
+        <ul>
+          {this.state.data.map(quest => {
+            return (
+              <ul key={quest.id}>
+                {quest.content}
+                <br/>
+                Difficulty: {quest.difficulty}
+              </ul>
+            );
+          })}
+        </ul>
+        <a href="/api/quest/">Embark on a new quest</a>
+      </div>
+      
     );
   }
 }
