@@ -40,6 +40,7 @@ export default class QuestList extends Component {
                 {quest.content}
                 <br/>
                 Difficulty: {quest.difficulty}
+                <br/>
               </ul>
             );
           })}
