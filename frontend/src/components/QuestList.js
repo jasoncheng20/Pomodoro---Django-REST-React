@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './style.css'
 
 export default class QuestList extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ export default class QuestList extends Component {
 
   render() {
     return (
-      <div>
+      <div className ='questlist'>
         <ul>
           {this.state.data.map(quest => {
             return (

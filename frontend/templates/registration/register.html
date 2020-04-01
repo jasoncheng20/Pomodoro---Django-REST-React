@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>create an account</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Create a new tomato account!</h1>
+        <form method="POST" action="{% url 'register' %} ">
+            {% csrf_token %}
+
+            {% if form.errors %}
+            <p>There are errors in your user creation form</p>
+            {% endif %}
+
+            {{ form }}
+
+            <input type="submit" value="Create my account">
+        </form>
+        <script src="" async defer></script>
+    </body>
+</html>

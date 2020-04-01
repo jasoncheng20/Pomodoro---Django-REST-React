@@ -1,16 +1,27 @@
+.app {
+    width: 110vw;
+}
+
 .backdrop {
     background-color: lightskyblue;
     opacity: 90%;
     text-align: center;
+    margin-top: 56px;
+    width: 100%;
 }
 
-.buttons {
+.button {
     background-color: goldenrod;
+    color: royalblue;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 20px;
 }
 
 .tomato {
-    height: 250px;
-    align-content: center
+    height: 250px
 }
 
 .timer {
@@ -18,4 +29,9 @@
     font-family:'Courier New', Courier, monospace;
     text-align: center;
 
+}
+
+.questlist {
+    display: flex;
+    width: 100vw;
 }
