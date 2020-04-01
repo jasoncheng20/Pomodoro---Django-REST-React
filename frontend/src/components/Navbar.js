@@ -12,7 +12,7 @@ const navbar = props => (
             <div className = 'navbar_items'>
                 <ul>
                     <li><a href = "/">About Us</a></li>
-                    <li><a href = "/register">Sign Up!</a></li>
+                    <li><a href = "/">Sign Up!</a></li>
                     <li><a href = "/">Log Out</a></li>
                     <li><a href = "/login">Log In</a></li>
                 </ul>

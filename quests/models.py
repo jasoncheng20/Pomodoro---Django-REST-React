@@ -2,14 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-class User(models.Model):
-    email = models.EmailField(unique=True)
-    name = models.CharField(unique=True, max_length=100)
-    password = models.CharField(max_length=1000)
-    points = models.IntegerField()
-    class Admin: 
-        pass
-
 POINT_CHOICES = (
     (1, 'Effortless (1)'),
     (2, 'Casual (2)'),
