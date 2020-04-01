@@ -1,15 +1,22 @@
+{% load static %}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Please help</title>
+  <title>Pomodoro Adventures</title>
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 </head>
 <body>
+{% if user.is_authenticated %}
 <div id="app">
     <!-- React will load here -->
 </div>
+{% else %}
+<h1>Log in with Google?</h1>
+  <a href="{% provider_login_url 'google' %}">Login with Google</a>
+{% endif %}
 </body>
-{% load static %}
 <script src="{% static "frontend/main.js" %}"></script>
 </html>

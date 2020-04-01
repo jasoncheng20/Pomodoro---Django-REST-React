@@ -1,0 +1,54 @@
+.logo_image {
+    height: 48px
+}
+
+.navbar {
+    background-color: tomato;
+    color: whitesmoke;
+    left: 0;
+    height: 56px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+.navbar_navigation {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem;
+}
+
+/* .navbar_items{} */
+
+.navbar_items a {
+    color: whitesmoke;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navbar_items ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar_items li {
+    padding: 0 0.5rem;
+}
+
+.navbar_items :hover {
+    color: rgb(46, 173, 46);
+}
+
+.navbar_logo a {
+    color: whitesmoke;
+    font-size: 1.5rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar_spacer {
+    flex: 1
+}

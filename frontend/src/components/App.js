@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './style.css';
 import { render } from 'react-dom';
+import Navbar from './Navbar'
 import Pomodoro from './Pomodoro.js';
 import ShortBreak from './ShortBreak.js';
 import LongBreak from './LongBreak.js';
@@ -43,13 +44,14 @@ export default class App extends Component {
     render(){
         const {showPomodoro, showShortBreak, showLongBreak} = this.state
         return(
-            <div>
+            <div className = 'app'>
+                <Navbar/>
                 <div className = 'backdrop'>
-                    <h1>Tomodoro Timer</h1>
-                    <div className="buttons">
-                        <button onClick={this.displayPomodoro}>Pomodoro</button>
-                        <button onClick={this.displayShortBreak}>Short Break</button>
-                        <button onClick={this.displayLongBreak}>Long Break</button>
+                    <h2>he's not smiling because you're not working hard enough.</h2>
+                    <div>
+                        <button className = 'button' onClick={this.displayPomodoro}>Pomodoro</button>
+                        <button className = 'button' onClick={this.displayShortBreak}>Short Break</button>
+                        <button className = 'button' onClick={this.displayLongBreak}>Long Break</button>
                     </div>
                     <br/>
                     <br/>
