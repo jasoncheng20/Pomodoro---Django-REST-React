@@ -1,23 +1,28 @@
-.app {
-    width: 110vw;
+html {
+    background-color: lightskyblue;
 }
 
 .backdrop {
-    background-color: lightskyblue;
-    opacity: 90%;
     text-align: center;
-    margin-top: 56px;
-    width: 100%;
+    margin-top: 80px;
 }
 
 .button {
     background-color: goldenrod;
+    border: none;
+    border-radius: 8px;
     color: royalblue;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
     margin: 0 10px;
     padding: 10px 20px;
+}
+
+
+.button:hover {
+    background-color: rgb(201, 133, 6);
+    color: lightblue;
 }
 
 .tomato {
@@ -28,10 +33,31 @@
     color: darkslateblue;
     font-family:'Courier New', Courier, monospace;
     text-align: center;
+}
 
+.timerbutton {
+    background-color: slategrey;
+    border: none;
+    border-radius: 8px;
+    color: whitesmoke;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 20px;
+    width: 80px
+}
+
+.timerbutton:hover {
+    background-color: darkslategray;
+    color: white
 }
 
 .questlist {
     display: flex;
     width: 100vw;
+}
+
+.questlist ul {
+    list-style: none;
 }

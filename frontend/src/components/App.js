@@ -44,7 +44,7 @@ export default class App extends Component {
     render(){
         const {showPomodoro, showShortBreak, showLongBreak} = this.state
         return(
-            <div className = 'app'>
+            <div>
                 <Navbar/>
                 <div className = 'backdrop'>
                     <h2>he's not smiling because you're not working hard enough.</h2>
@@ -58,7 +58,7 @@ export default class App extends Component {
                     {showPomodoro && <Pomodoro/>}
                     {showShortBreak && <ShortBreak/>}
                     {showLongBreak && <LongBreak/>}
-                    <img className = "tomato" src = {tomato}/>
+                    <img className = 'tomato' src = {tomato}/>
                 </div>
                 <QuestList/>
             </div>

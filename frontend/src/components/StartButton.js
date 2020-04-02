@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import "./style.css";
 
 // Responsible for display of start button
 export default class StartButton extends Component {
-    render() {
-      return (
-    <div>
-    <button onClick={this.props.startCountdown}>Start</button>
-   </div>
-  );
-    }
+  render() {
+    return (
+      <button className="timerbutton" onClick={this.props.startCountdown}>
+        Start
+      </button>
+    );
   }
+}

@@ -3,6 +3,7 @@ import Timer from "./Timer";
 import StartButton from "./StartButton";
 import StopButton from "./StopButton";
 import ResetButton from "./ResetButton";
+import "./style.css"
 
 export default class Pomodoro extends Component {
   constructor(props) {

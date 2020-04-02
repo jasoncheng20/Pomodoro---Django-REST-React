@@ -71,9 +71,11 @@ export default class ShortBreak extends Component {
       <div>
         <h2>Short Break</h2>
         <Timer minutes={this.state.minutes} seconds={this.state.seconds} />
-        <StartButton startCountdown={this.startCountdown} />
-        <StopButton stopCountdown={this.stopCountdown} />
-        <ResetButton reset={this.resetCountdown} />
+        <div>
+          <StartButton startCountdown={this.startCountdown} />
+          <StopButton stopCountdown={this.stopCountdown} />
+          <ResetButton reset={this.resetCountdown} />
+        </div>
       </div>
     );
   }
