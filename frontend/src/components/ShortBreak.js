@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Timer from "./Timer";
 import StartButton from "./StartButton";
 import StopButton from "./StopButton";
+import DisabledStopButton from "./DisabledStop";
 import ResetButton from "./ResetButton";
 
 export default class ShortBreak extends Component {
@@ -71,9 +72,11 @@ export default class ShortBreak extends Component {
       <div>
         <h2>Short Break</h2>
         <Timer minutes={this.state.minutes} seconds={this.state.seconds} />
-        <StartButton startCountdown={this.startCountdown} />
-        <StopButton stopCountdown={this.stopCountdown} />
-        <ResetButton reset={this.resetCountdown} />
+        <div>
+          <StartButton startCountdown={this.startCountdown} />
+          {this.secondsRemaining > 0 ? <StopButton stopCountdown={this.stopCountdown} /> : <DisabledStopButton/> }
+          <ResetButton reset={this.resetCountdown} />
+        </div>
       </div>
     );
   }

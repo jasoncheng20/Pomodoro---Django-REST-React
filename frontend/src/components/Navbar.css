@@ -35,7 +35,7 @@
 }
 
 .navbar_items li {
-    padding: 0 0.5rem;
+    padding: 1rem;
 }
 
 .navbar_items :hover {

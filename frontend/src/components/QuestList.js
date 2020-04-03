@@ -48,7 +48,6 @@ export default class QuestList extends Component {
         </ul>
         <a href="/api/quest/">Embark on a new quest</a>
       </div>
-      
     );
   }
 }
