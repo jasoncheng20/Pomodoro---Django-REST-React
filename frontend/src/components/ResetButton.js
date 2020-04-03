@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 
-// Responsible for display of start button
+// Responsible for display of reset button
 export default class ResetButton extends Component {
   render() {
     return (

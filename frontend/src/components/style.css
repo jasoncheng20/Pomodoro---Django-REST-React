@@ -16,7 +16,7 @@ html {
     text-align: center;
     text-decoration: none;
     margin: 0 10px;
-    padding: 10px 20px;
+    padding: 10px 30px;
 }
 
 
@@ -24,6 +24,7 @@ html {
     background-color: rgb(201, 133, 6);
     color: lightblue;
 }
+
 
 .tomato {
     height: 250px
@@ -51,6 +52,20 @@ html {
 .timerbutton:hover {
     background-color: darkslategray;
     color: white
+}
+
+.timerbutton_inactive {
+    background-color: slategrey;
+    border: none;
+    border-radius: 8px;
+    color: whitesmoke;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 20px;
+    width: 80px;
+    opacity: 50%;
 }
 
 .questlist {

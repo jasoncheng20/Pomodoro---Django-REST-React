@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 
-// Responsible for display of start button
+// Responsible for display of stop button
 export default class StopButton extends Component {
   render() {
     return (

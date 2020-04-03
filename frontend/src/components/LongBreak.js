@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Timer from "./Timer";
 import StartButton from "./StartButton";
 import StopButton from "./StopButton";
+import DisabledStopButton from "./DisabledStop";
 import ResetButton from "./ResetButton";
 
 export default class LongBreak extends Component {
@@ -77,7 +78,7 @@ export default class LongBreak extends Component {
         <h2>Long Break</h2>
         <Timer minutes={this.state.minutes} seconds={this.state.seconds} />
         <StartButton startCountdown={this.startCountdown} />
-        <StopButton stopCountdown={this.stopCountdown} />
+        {this.secondsRemaining > 0 ? <StopButton stopCountdown={this.stopCountdown} /> : <DisabledStopButton/> }
         <ResetButton reset={this.resetCountdown} />
       </div>
     );

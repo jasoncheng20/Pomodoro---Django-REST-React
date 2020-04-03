@@ -47,7 +47,7 @@ export default class App extends Component {
             <div>
                 <Navbar/>
                 <div className = 'backdrop'>
-                    <h2>he's not smiling because you're not working hard enough.</h2>
+                    <h2>San Marzano</h2>
                     <div>
                         <button className = 'button' onClick={this.displayPomodoro}>Pomodoro</button>
                         <button className = 'button' onClick={this.displayShortBreak}>Short Break</button>
