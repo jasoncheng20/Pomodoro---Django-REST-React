@@ -1,5 +1,5 @@
 html {
-    background-color: lightskyblue;
+    background-color: #aad8f7 ;
 }
 
 .backdrop {
@@ -21,8 +21,8 @@ html {
 
 
 .button:hover {
-    background-color: rgb(201, 133, 6);
-    color: lightblue;
+    background-color: royalblue;
+    color: whitesmoke;
 }
 
 

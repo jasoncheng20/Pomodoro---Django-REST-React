@@ -77,12 +77,12 @@ export default class QuestList extends Component {
                 Difficulty: {quest.difficulty}
                 <br />
                 <button onClick={() => deleteQuest(index)}>Delete {index}</button>
-                <button href="/api/quest/{index}">Details</button>
+                <button> <a href="/api/quest/{index}">Details</a></button>
               </ul>
             );
           })}
         </ul>
-        <button href="/api/quest/">>Embark on a new quest</button>
+        <button><a href="/api/quest/">Embark on a new quest</a></button>
       </div>
     );
   }
