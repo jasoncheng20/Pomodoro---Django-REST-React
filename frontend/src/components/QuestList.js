@@ -76,8 +76,8 @@ export default class QuestList extends Component {
                 <br />
                 Difficulty: {quest.difficulty}
                 <br />
-                <button onClick={() => deleteQuest(index)}>Delete {index}</button>
-                <button> <a href="/api/quest/{index}">Details</a></button>
+                <button onClick={() => deleteQuest(index)}>Delete</button>
+                <button> <a href={`/api/quest/${quest.id}`}>Details</a></button>
               </ul>
             );
           })}
