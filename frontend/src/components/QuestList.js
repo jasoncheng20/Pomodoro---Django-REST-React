@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './style.css'
+import "./style.css";
 
 export default class QuestList extends Component {
   constructor(props) {
@@ -7,13 +7,18 @@ export default class QuestList extends Component {
     this.state = {
       data: [],
       loaded: false,
-      placeholder: "Loading"
+      placeholder: "Loading",
+      error: null,
     };
   }
 
   componentDidMount() {
+    this.getQuests();
+  }
+
+  getQuests() {
     fetch("api/quest")
-      .then(response => {
+      .then((response) => {
         if (response.status > 400) {
           return this.setState(() => {
             return { placeholder: "Something went wrong!" };
@@ -21,32 +26,63 @@ export default class QuestList extends Component {
         }
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         this.setState(() => {
           return {
             data,
-            loaded: true
+            loaded: true,
           };
         });
       });
   }
 
+  createQuest(attrs) {
+    return fetch("api/quest", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ quest: attrs }),
+    }).then((response) => {
+      if (response.status === 201) {
+        this.getQuests();
+      }
+    });
+  }
+  deleteQuest = (id) => {
+    return fetch(`api/quest/${id}/`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.status === 204) {
+          this.getQuests();
+        } else {
+          return response.json;
+        }
+      })
+      .then((payload) => {
+        this.setState({ error: payload.error });
+      });
+  };
+
   render() {
     return (
-      <div className ='questlist'>
+      <div className="questlist">
         <ul>
-          {this.state.data.map(quest => {
+          {this.state.data.map((quest, index) => {
             return (
-              <ul key={quest.id}>
-                {quest.content}
-                <br/>
+              <ul key={index}>
+                {quest.content} {index}
+                <br />
                 Difficulty: {quest.difficulty}
-                <br/>
+                <br />
+                <button onClick={() => deleteQuest(index)}>Delete</button>
+                <button> <a href={`/api/quest/${quest.id}`}>Details</a></button>
               </ul>
             );
           })}
         </ul>
-        <a href="/api/quest/">Embark on a new quest</a>
+        <button><a href="/api/quest/">Embark on a new quest</a></button>
       </div>
     );
   }
