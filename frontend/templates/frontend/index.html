@@ -14,9 +14,6 @@
   <!-- React will load here -->
 </div>
 {% else %}
-<div id="app">
-    <!-- React will load here -->
-</div>
 <h1>Log in with Google?</h1>
 <a href="{% provider_login_url 'google' %}">Login with Google</a>
 {% endif %}

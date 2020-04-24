@@ -11,6 +11,7 @@ POINT_CHOICES = (
 )
 
 class Quest(models.Model):
+    id = models.AutoField(primary_key=True)
     # The title of the task
     content = models.CharField(max_length=250)
     # When the task is created

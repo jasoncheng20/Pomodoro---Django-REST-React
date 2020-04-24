@@ -45,10 +45,11 @@ export default class QuestList extends Component {
       body: JSON.stringify({ quest: attrs }),
     }).then((response) => {
       if (response.status === 201) {
-        this.getQuests();
+        this.getQuests();        
       }
     });
   }
+
   deleteQuest = (id) => {
     return fetch(`api/quest/${id}/`, {
       method: "DELETE",
@@ -72,17 +73,17 @@ export default class QuestList extends Component {
           {this.state.data.map((quest, index) => {
             return (
               <ul key={index}>
-                {quest.content} {index}
+                {quest.content} {quest.id}
                 <br />
                 Difficulty: {quest.difficulty}
                 <br />
-                <button onClick={() => deleteQuest(index)}>Delete</button>
-                <button> <a href={`/api/quest/${quest.id}`}>Details</a></button>
+                <button onClick={() => deleteQuest(quest.id)}>Delete</button>
+                <a href={`/api/quest/${quest.id}/`}>Details</a>
               </ul>
             );
           })}
         </ul>
-        <button><a href="/api/quest/">Embark on a new quest</a></button>
+        <a href="/api/quest/">Embark on a new quest</a>
       </div>
     );
   }
