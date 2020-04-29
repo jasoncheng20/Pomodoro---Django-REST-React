@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import "./style.css";
+import NewQuest from "./pages/NewQuest";
 
 export default class QuestList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      questlist: [],
       loaded: false,
       placeholder: "Loading",
-      error: null,
+      showCreateBox: false,
     };
   }
 
@@ -17,7 +18,7 @@ export default class QuestList extends Component {
   }
 
   getQuests() {
-    fetch("api/quest")
+    fetch("api/quest/")
       .then((response) => {
         if (response.status > 400) {
           return this.setState(() => {
@@ -26,33 +27,40 @@ export default class QuestList extends Component {
         }
         return response.json();
       })
-      .then((data) => {
+      .then((response) => {
         this.setState(() => {
           return {
-            data,
+            questlist: response,
             loaded: true,
           };
         });
       });
   }
 
-  createQuest(attrs) {
-    return fetch("api/quest", {
+  createQuest = (attrs) => {
+    return fetch("/api/quest/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ quest: attrs }),
+      body: JSON.stringify(attrs),
     }).then((response) => {
       if (response.status === 201) {
-        this.getQuests();        
+        this.getQuests();
       }
     });
+  }
+
+  toggleCreateBox() {
+    this.setState({ showCreateBox: !this.state.showCreateBox });
   }
 
   deleteQuest = (id) => {
     return fetch(`api/quest/${id}/`, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
     })
       .then((response) => {
         if (response.status === 204) {
@@ -70,20 +78,27 @@ export default class QuestList extends Component {
     return (
       <div className="questlist">
         <ul>
-          {this.state.data.map((quest, index) => {
+          {this.state.questlist.map((quest, index) => {
             return (
               <ul key={index}>
-                {quest.content} {quest.id}
+                {quest.content}
                 <br />
                 Difficulty: {quest.difficulty}
                 <br />
-                <button onClick={() => deleteQuest(quest.id)}>Delete</button>
+                <button onClick={() => this.deleteQuest(quest.id)}>
+                  Delete
+                </button>
                 <a href={`/api/quest/${quest.id}/`}>Details</a>
               </ul>
             );
           })}
         </ul>
-        <a href="/api/quest/">Embark on a new quest</a>
+        <button onClick={() => this.toggleCreateBox()}>
+          Embark on a new quest
+        </button>
+        {this.state.showCreateBox ? (
+          <NewQuest createQuest = {this.createQuest} closeWindow={this.toggleCreateBox} />
+        ) : null}
       </div>
     );
   }
