@@ -2,16 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-POINT_CHOICES = (
-    (1, 'Effortless (1)'),
-    (2, 'Casual (2)'),
-    (3, 'Fair (3)'),
-    (5, 'Challenging (5)'),
-    (8, 'Elite (8)'),
-)
-
 class Quest(models.Model):
-    id = models.AutoField(primary_key=True)
     # The title of the task
     content = models.CharField(max_length=250)
     # When the task is created
@@ -22,7 +13,7 @@ class Quest(models.Model):
     # Is this task completed? Once completed, points go into the system
     completed = models.BooleanField(default=False)
     # Number of points - see POINT CHOICES
-    difficulty = models.IntegerField(choices=POINT_CHOICES)
+    difficulty = models.IntegerField()
     # Foreign key to the user.
     # user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
 
