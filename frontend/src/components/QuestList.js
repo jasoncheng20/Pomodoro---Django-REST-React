@@ -51,7 +51,7 @@ export default class QuestList extends Component {
     });
   }
 
-  toggleCreateBox() {
+  toggleCreateBox = () => {
     this.setState({ showCreateBox: !this.state.showCreateBox });
   }
 

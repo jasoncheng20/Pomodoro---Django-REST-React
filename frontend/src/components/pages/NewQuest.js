@@ -22,11 +22,12 @@ export default class NewQuest extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { createQuest } = this.props;
+    const { createQuest, closeWindow } = this.props;
     const { form } = this.state;
     createQuest(form).then(() => {
       this.setState({ createSuccess: true });
     });
+    closeWindow();
   };
 
   selectDifficulty = (event) => {
@@ -53,6 +54,7 @@ export default class NewQuest extends Component {
   render() {
     const { content, in_progress, completed, difficulty } = this.state.form;
     return (
+      <div>
       <form onSubmit={this.handleSubmit}>
         <label>Content:</label>
         <input
@@ -88,8 +90,10 @@ export default class NewQuest extends Component {
           <option value={5}>Challenging</option>
           <option value={8}>Elite</option>
         </select>
-        <input type="submit" />
+        <input type="submit"/>
       </form>
+      <button onClick = {this.props.closeWindow}>Close window</button>
+      </div>
     );
   }
 }
