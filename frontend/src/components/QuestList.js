@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import NewQuest from "./pages/NewQuest";
+import EditQuest from "./pages/EditQuest";
 
 export default class QuestList extends Component {
   constructor(props) {
@@ -10,6 +11,8 @@ export default class QuestList extends Component {
       loaded: false,
       placeholder: "Loading",
       showCreateBox: false,
+      showEditBox: false,
+      editId: null,
     };
   }
 
@@ -49,11 +52,35 @@ export default class QuestList extends Component {
         this.getQuests();
       }
     });
-  }
+  };
 
-  toggleCreateBox() {
+  showQuest = (id) => {
+    return fetch(`api/quest/${id}/`).then((response) => {
+      return response.json();
+    });
+  };
+
+  toggleCreateBox = () => {
     this.setState({ showCreateBox: !this.state.showCreateBox });
-  }
+  };
+
+  toggleEditBox = (id) => {
+    this.setState({ showEditBox: !this.state.showEditBox, editId: id });
+  };
+
+  editQuest = (id, attrs) => {
+    return fetch(`api/quest/${id}/`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(attrs),
+    }).then((response) => {
+      if (response.status === 200) {
+        this.getQuests();
+      }
+    });
+  };
 
   deleteQuest = (id) => {
     return fetch(`api/quest/${id}/`, {
@@ -88,7 +115,7 @@ export default class QuestList extends Component {
                 <button onClick={() => this.deleteQuest(quest.id)}>
                   Delete
                 </button>
-                <a href={`/api/quest/${quest.id}/`}>Details</a>
+                <button onClick={() => this.toggleEditBox(quest.id)}>Edit</button>
               </ul>
             );
           })}
@@ -97,7 +124,18 @@ export default class QuestList extends Component {
           Embark on a new quest
         </button>
         {this.state.showCreateBox ? (
-          <NewQuest createQuest = {this.createQuest} closeWindow={this.toggleCreateBox} />
+          <NewQuest
+            createQuest={this.createQuest}
+            closeWindow={this.toggleCreateBox}
+          />
+        ) : null}
+        {this.state.showEditBox ? (
+          <EditQuest
+            id={this.state.editId}
+            editQuest={this.editQuest}
+            closeWindow={this.toggleEditBox}
+            showQuest={this.showQuest}
+          />
         ) : null}
       </div>
     );

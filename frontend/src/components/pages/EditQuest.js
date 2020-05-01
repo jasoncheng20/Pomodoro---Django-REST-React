@@ -1,17 +1,23 @@
 import React, { Component } from "react";
 
-export default class NewQuest extends Component {
+export default class EditQuest extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      form: {
-        content: "",
-        in_progress: false,
-        completed: false,
-        difficulty: 1,
-      },
-      createSuccess: false,
+      form: {},
+      editSuccess: false,
     };
+  }
+
+  componentDidMount () {
+    this.getQuest()
+  }
+
+  getQuest () {
+    let { showQuest } = this.props
+    showQuest(this.props.id).then(response => {
+      this.setState({ form: response })
+    })
   }
 
   handleChange = (event) => {
@@ -22,13 +28,14 @@ export default class NewQuest extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { createQuest, closeWindow } = this.props;
+    const { editQuest, closeWindow } = this.props;
     const { form } = this.state;
-    createQuest(form).then(() => {
-      this.setState({ createSuccess: true });
+    editQuest( form.id, form).then(() => {
+      this.setState({ editSuccess: true });
     });
     closeWindow();
   };
+
 
   toggleProgress = () => {
     let { form } = this.state;
@@ -48,7 +55,7 @@ export default class NewQuest extends Component {
     const { content, in_progress, completed, difficulty } = this.state.form;
     return (
       <div>
-        <h3>Add a New Quest</h3>
+        <h3>Edit Quest!</h3>
       <form onSubmit={this.handleSubmit}>
         <label>Content:</label>
         <input
