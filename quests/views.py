@@ -69,7 +69,8 @@ def quest_detail(request, id):
         serializer = QuestSerializer(quest)
         return JsonResponse(serializer.data)
     elif request.method == 'PUT':
-        serializer = QuestSerializer(quest, data=request.data)
+        data = JSONParser().parse(request)
+        serializer = QuestSerializer(quest, data=data)
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data)
