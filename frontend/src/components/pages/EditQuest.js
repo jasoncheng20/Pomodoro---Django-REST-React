@@ -55,7 +55,7 @@ export default class EditQuest extends Component {
     const { content, in_progress, completed, difficulty } = this.state.form;
     return (
       <div>
-        <h3>Edit Quest!</h3>
+        <p>Edit</p>
       <form onSubmit={this.handleSubmit}>
         <label>Content:</label>
         <input
@@ -91,7 +91,8 @@ export default class EditQuest extends Component {
           <option value={5}>Challenging</option>
           <option value={8}>Elite</option>
         </select>
-        <input type="submit"/>
+        <input type="submit" value="Confirm"/>
+        <br/>
       </form>
       <button onClick = {this.props.closeWindow}>Close window</button>
       </div>

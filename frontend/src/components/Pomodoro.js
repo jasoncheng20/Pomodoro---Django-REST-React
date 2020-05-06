@@ -41,6 +41,7 @@ export default class Pomodoro extends Component {
     }
     if (min === 0 && sec === 0) {
       clearInterval(this.tick);
+      alert("Time to take a break")
     }
     this.secondsRemaining--;
   };
@@ -66,12 +67,6 @@ export default class Pomodoro extends Component {
     clearInterval(this.tick);
     this.setState({ timerRunning: false });
   };
-
-  alert = () => {
-    if (!this.secondsRemaining === 0){
-      alert('Time to take a break!')
-    }
-  }
 
   render() {
     return (

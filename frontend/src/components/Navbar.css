@@ -3,7 +3,7 @@
 }
 
 .navbar {
-    background-color: tomato;
+    background-image: linear-gradient(to right, rgb(219, 38, 6), rgb(255, 99, 71));
     color: whitesmoke;
     left: 0;
     height: 56px;
@@ -22,7 +22,7 @@
 /* .navbar_items{} */
 
 .navbar_items a {
-    color: whitesmoke;
+    color: rgb(236, 255, 232);
     cursor: pointer;
     text-decoration: none;
 }
@@ -39,7 +39,7 @@
 }
 
 .navbar_items :hover {
-    color: rgb(46, 173, 46);
+    color: rgb(255, 255, 255);
 }
 
 .navbar_logo a {
