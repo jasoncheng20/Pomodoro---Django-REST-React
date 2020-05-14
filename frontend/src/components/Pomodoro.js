@@ -64,8 +64,6 @@ export default class Pomodoro extends Component {
       seconds: "00"
     });
     this.secondsRemaining = 1500;
-    clearInterval(this.tick);
-    this.setState({ timerRunning: false });
   };
 
   render() {

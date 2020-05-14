@@ -1,7 +1,7 @@
-.newquest-modal {
+.editquest-modal {
     width: 400px;
     height: 200px;
-    background-color: rgb(235, 241, 250);
+    background-color: rgb(250, 236, 224);
     border-radius: 5px;
     padding: 15px;
     position: relative;

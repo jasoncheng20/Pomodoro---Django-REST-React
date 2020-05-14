@@ -88,7 +88,7 @@ export default class NewQuest extends Component {
             <input type="submit" value="Add Quest" />
             <br />
           </form>
-          <button className="close" onClick={this.props.closeWindow}>+</button>
+          <button className="close" onClick={this.props.closeWindow}>&times;</button>
         </div>
       </div>
     );
