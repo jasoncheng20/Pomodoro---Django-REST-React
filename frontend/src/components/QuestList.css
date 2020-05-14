@@ -1,0 +1,61 @@
+.deletebutton {
+  background-color: tomato;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 8px 50px 0 rgba(0,0,0,0.2);
+  color: whitesmoke;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.editbutton {
+  background-color: steelblue;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 8px 50px 0 rgba(0,0,0,0.2);
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  }
+
+.newbutton {
+  background-color: transparent;
+  border: none;
+  color: rgb(105, 146, 112);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 10px;
+  padding: 10px 10px;
+  width: 40%;
+}
+
+.newbutton:hover {
+  color: rgb(14, 114, 58);
+}
+
+.questbox {
+  background-color: #e2e3e7;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.questbox ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-between;
+  list-style: none;
+  margin: 5px;
+  padding-left: 10px
+}
+
+.questlist {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin: 20px;
+}

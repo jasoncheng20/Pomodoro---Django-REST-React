@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./style.css";
+import "./QuestList.css";
 import NewQuest from "./pages/NewQuest";
 import EditQuest from "./pages/EditQuest";
 
@@ -104,39 +104,54 @@ export default class QuestList extends Component {
   render() {
     return (
       <div className="questlist">
-        <ul>
-          {this.state.questlist.map((quest, index) => {
-            return (
-              <ul key={index}>
-                {quest.content}
-                <br />
-                Difficulty: {quest.difficulty}
-                <br />
-                <button onClick={() => this.deleteQuest(quest.id)}>
-                  Delete
-                </button>
-                <button onClick={() => this.toggleEditBox(quest.id)}>Edit</button>
-              </ul>
-            );
-          })}
-        </ul>
-        <button onClick={() => this.toggleCreateBox()}>
-          Embark on a new quest
-        </button>
-        {this.state.showCreateBox ? (
-          <NewQuest
-            createQuest={this.createQuest}
-            closeWindow={this.toggleCreateBox}
-          />
-        ) : null}
-        {this.state.showEditBox ? (
-          <EditQuest
-            id={this.state.editId}
-            editQuest={this.editQuest}
-            closeWindow={this.toggleEditBox}
-            showQuest={this.showQuest}
-          />
-        ) : null}
+        <h3>Quests</h3>
+        <div className="questbox">
+          <button className="newbutton" onClick={() => this.toggleCreateBox()}>
+            + Embark on a Quest
+          </button>
+          {this.state.showCreateBox ? (
+            <NewQuest
+              createQuest={this.createQuest}
+              closeWindow={this.toggleCreateBox}
+            />
+          ) : null}
+          <div>
+            {this.state.questlist.map((quest, index) => {
+              return (
+                <ul key={index}>
+                  {quest.difficulty === 1 && <span>Effortless </span>}
+                  {quest.difficulty === 2 && <span>Casual </span>}
+                  {quest.difficulty === 3 && <span>Fair </span>}
+                  {quest.difficulty === 5 && <span>Challenging </span>}
+                  {quest.difficulty === 8 && <span>Elite </span>}
+                  {quest.content}
+                  <button
+                    className="editbutton"
+                    onClick={() => this.toggleEditBox(quest.id)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="deletebutton"
+                    onClick={() => this.deleteQuest(quest.id)}
+                  >
+                    &times;
+                  </button>
+                  <br />
+                </ul>
+              );
+            })}
+          </div>
+          <br />
+          {this.state.showEditBox ? (
+            <EditQuest
+              id={this.state.editId}
+              editQuest={this.editQuest}
+              closeWindow={this.toggleEditBox}
+              showQuest={this.showQuest}
+            />
+          ) : null}
+        </div>
       </div>
     );
   }

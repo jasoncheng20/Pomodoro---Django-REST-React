@@ -7,7 +7,7 @@ import ShortBreak from "./ShortBreak.js";
 import LongBreak from "./LongBreak.js";
 import tomato from "../assets/Tomato.gif";
 import QuestList from "./QuestList.js";
-export default class App extends Component {
+export default class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -74,6 +74,5 @@ export default class App extends Component {
   }
 }
 
-const container = document.getElementById("app");
-debugger
-render(<App />, container);
+const container = document.getElementById("dashboard");
+render(<Dashboard />, container);

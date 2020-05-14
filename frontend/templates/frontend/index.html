@@ -8,15 +8,21 @@
   <title>Pomodoro Adventures</title>
   <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 </head>
-<body>
 {% if user.is_authenticated %}
-<div id="app">
-  <!-- React will load here -->
-</div>
-{% else %}
-<h1>Log in with Google?</h1>
-<a href="{% provider_login_url 'google' %}">Login with Google</a>
-{% endif %}
+<body>
+  <div id="app">
+    <!-- React will load here -->
+  </div>
+  <script src="{% static "frontend/main.js" %}"></script>
 </body>
-<script src="{% static "frontend/main.js" %}"></script>
+{% else %}
+<body>
+  <div id="dashboard">
+
+  </div>
+  <h3>Log in with Google?</h3>
+  <a href="{% provider_login_url 'google' %}">Login with Google</a>
+  <script src="{% static "frontend/main.js" %}"></script>
+</body>
+{% endif %}
 </html>

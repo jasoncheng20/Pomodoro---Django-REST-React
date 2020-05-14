@@ -1,17 +1,18 @@
-html {
+body {
     background-color: #aad8f7 ;
 }
 
 .backdrop {
     text-align: center;
-    margin-top: 80px;
+    width: 160%;
 }
 
 .button {
-    background-color: goldenrod;
+    background-color: rgb(247, 187, 75);
     border: none;
     border-radius: 8px;
-    color: royalblue;
+    box-shadow: 0 8px 50px 0 rgba(0,0,0,0.2);
+    color: whitesmoke;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -19,14 +20,21 @@ html {
     padding: 10px 30px;
 }
 
-
 .button:hover {
-    background-color: royalblue;
-    color: whitesmoke;
+    background-color: rgb(252, 164, 0);
+    color: white;
 }
 
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 80px;
+}
 
 .tomato {
+    background-image: linear-gradient(rgb(234, 255, 234), rgb(1, 103, 191));
+    border-radius: 5px;
+    box-shadow: 0 8px 50px 0 rgba(0,0,0,0.2);
     height: 250px
 }
 
@@ -40,6 +48,7 @@ html {
     background-color: slategrey;
     border: none;
     border-radius: 8px;
+    box-shadow: 0 8px 50px 0 rgba(0,0,0,0.2);
     color: whitesmoke;
     cursor: pointer;
     text-align: center;
@@ -66,13 +75,4 @@ html {
     padding: 10px 20px;
     width: 80px;
     opacity: 50%;
-}
-
-.questlist {
-    display: flex;
-    width: 100vw;
-}
-
-.questlist ul {
-    list-style: none;
 }

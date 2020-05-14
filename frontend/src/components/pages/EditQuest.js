@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./EditQuest.css"
 export default class EditQuest extends Component {
   constructor(props) {
     super(props);
@@ -54,46 +54,47 @@ export default class EditQuest extends Component {
   render() {
     const { content, in_progress, completed, difficulty } = this.state.form;
     return (
-      <div>
-        <h3>Edit Quest!</h3>
-      <form onSubmit={this.handleSubmit}>
-        <label>Content:</label>
-        <input
-          type="text"
-          name="content"
-          value={content}
-          onChange={this.handleChange}
-          required
-        />
-        <label>In Progress:</label>
-        <input
-          type="checkbox"
-          name="in progress"
-          value={in_progress}
-          onChange={this.toggleProgress}
-        />
-        <label>Completed:</label>
-        <input
-          type="checkbox"
-          name="completed"
-          value={completed}
-          onChange={this.toggleComplete}
-        />
-        <label>Difficulty:</label>
-        <select
-          value={difficulty}
-          name="difficulty"
-          onChange={this.handleChange}
-        >
-          <option value={1}>Effortless</option>
-          <option value={2}>Casual</option>
-          <option value={3}>Fair</option>
-          <option value={5}>Challenging</option>
-          <option value={8}>Elite</option>
-        </select>
-        <input type="submit"/>
-      </form>
-      <button onClick = {this.props.closeWindow}>Close window</button>
+      <div className="bg-modal">
+        <div className="editquest-modal">
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            name="content"
+            value={content}
+            onChange={this.handleChange}
+            required
+          />
+          <label>In Progress:</label>
+          <input
+            type="checkbox"
+            name="in progress"
+            value={in_progress}
+            onChange={this.toggleProgress}
+          />
+          <label>Completed:</label>
+          <input
+            type="checkbox"
+            name="completed"
+            value={completed}
+            onChange={this.toggleComplete}
+          />
+          <label>Difficulty:</label>
+          <select
+            value={difficulty}
+            name="difficulty"
+            onChange={this.handleChange}
+          >
+            <option value={1}>Effortless</option>
+            <option value={2}>Casual</option>
+            <option value={3}>Fair</option>
+            <option value={5}>Challenging</option>
+            <option value={8}>Elite</option>
+          </select>
+          <input type="submit" value="Confirm"/>
+          <br/>
+        </form>
+        <button className="close" onClick = {this.props.closeWindow}>&times;</button>
+        </div>
       </div>
     );
   }

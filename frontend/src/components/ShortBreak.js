@@ -35,6 +35,7 @@ export default class ShortBreak extends Component {
     }
     if (min === 0 && sec === 0) {
       clearInterval(this.tick);
+      alert("Time to get back to work!")
     }
     this.secondsRemaining--;
   };
@@ -59,12 +60,6 @@ export default class ShortBreak extends Component {
     this.secondsRemaining = 300;
     clearInterval(this.tick);
     this.setState({ timerRunning: false });
-  };
-
-  alert = () => {
-    if (this.state.minutes === 0 && this.state.seconds === 0){
-      alert('Time to keep working!')
-    }
   };
 
   render() {
