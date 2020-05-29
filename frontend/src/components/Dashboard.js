@@ -10,69 +10,14 @@ import QuestList from "./QuestList.js";
 export default class Dashboard extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showPomodoro: true,
-      showShortBreak: false,
-      showLongBreak: false,
-    };
-  }
-
-  displayPomodoro = () => {
-    this.setState({
-      showPomodoro: true,
-      showShortBreak: false,
-      showLongBreak: false,
-    });
-  };
-
-  displayShortBreak = () => {
-    this.setState({
-      showPomodoro: false,
-      showShortBreak: true,
-      showLongBreak: false,
-    });
-  };
-
-  displayLongBreak = () => {
-    this.setState({
-      showPomodoro: false,
-      showShortBreak: false,
-      showLongBreak: true,
-    });
+  
   };
 
   render() {
-    const { showPomodoro, showShortBreak, showLongBreak } = this.state;
     return (
       <div>
         <Navbar />
-        <div className="container">
-          <div className="backdrop">
-            <img className="tomato" src={tomato} />
-            <h2>Timer</h2>
-            <div>
-              <button className="button" onClick={this.displayPomodoro}>
-                Pomodoro
-              </button>
-              <button className="button" onClick={this.displayShortBreak}>
-                Short Break
-              </button>
-              <button className="button" onClick={this.displayLongBreak}>
-                Long Break
-              </button>
-            </div>
-            <br />
-            <br />
-            {showPomodoro && <Pomodoro />}
-            {showShortBreak && <ShortBreak />}
-            {showLongBreak && <LongBreak />}
-          </div>
-          <QuestList />
-        </div>
       </div>
     );
   }
 }
-
-const container = document.getElementById("dashboard");
-render(<Dashboard />, container);

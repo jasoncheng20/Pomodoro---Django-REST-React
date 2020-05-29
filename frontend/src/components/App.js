@@ -75,5 +75,4 @@ export default class App extends Component {
 }
 
 const container = document.getElementById("app");
-debugger
 render(<App />, container);
