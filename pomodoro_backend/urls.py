@@ -22,6 +22,5 @@ urlpatterns = [
     path('', include('quests.urls')),
     path('', include('frontend.urls')),
     path('accounts/', include('allauth.urls')),
-    path('accounts/logout/', TemplateView.as_view(template_name = 'logout.html')),
     path('', TemplateView.as_view(template_name = 'frontend.index.html'))
 ]
