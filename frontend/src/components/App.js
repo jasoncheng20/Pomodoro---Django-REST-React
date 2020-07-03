@@ -74,5 +74,5 @@ export default class App extends Component {
   }
 }
 
-// const container = document.getElementById("app");
-// render(<App />, container);
+const container = document.getElementById("app");
+render(<App />, container);
