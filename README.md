@@ -10,7 +10,7 @@
 
 ## 1. Purpose
 
-- 
+- This is a side project that is still a work in progress. I decided to create a Pomodoro timer app as a tool to help manage time, remind myself to take breaks, and increase productivity in my own schedule. Furthermore, I wanted to create something using Python and Django.
 
 ## 2. Skills acquired
 
@@ -26,7 +26,9 @@
 ## 4. Features
 
 - CRUD operations
-- As a user, I can sign-in and once authenticated, can create, view, update, and delete tasks
+- As a user, I can start and stop a countdown timer.
+- As a user, I can select a 25-minute timer, a 5-minute short break, and a 15-minute long break.
+- As a user, I can sign-in and once authenticated, can create, view, update, and delete tasks.
 
 ## 5. How to use
 
