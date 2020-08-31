@@ -59,3 +59,8 @@
   width: 100vw;
   margin: 20px;
 }
+
+#row-container {
+  display: grid;
+  grid-template-columns: 40% 40% 10% 10%;
+}
