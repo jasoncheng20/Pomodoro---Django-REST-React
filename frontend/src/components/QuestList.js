@@ -106,7 +106,7 @@ export default class QuestList extends Component {
       <div className="questlist">
         <h3>Quests</h3>
         <div className="questbox">
-          <button className="newbutton" onClick={() => this.toggleCreateBox()}>
+          <button className="questbutton" id="newbutton" onClick={() => this.toggleCreateBox()}>
             + Embark on a Quest
           </button>
           <div>
@@ -117,8 +117,8 @@ export default class QuestList extends Component {
             <div>
               {this.state.questlist.map((quest, index) => {
                 return (
-                  <div id="row-container">
-                    <ul key={index}>
+                  <ul key={index}>
+                    <div id="row-container">
                       {quest.difficulty === 1 && <div>Effortless </div>}
                       {quest.difficulty === 2 && <div>Casual </div>}
                       {quest.difficulty === 3 && <div>Fair </div>}
@@ -127,7 +127,8 @@ export default class QuestList extends Component {
                       <div>{quest.content}</div>
                       <div>
                         <button
-                          className="editbutton"
+                          className="questbutton"
+                          id="editbutton"
                           onClick={() => this.toggleEditBox(quest.id)}
                         >
                           Edit
@@ -135,15 +136,16 @@ export default class QuestList extends Component {
                       </div>
                       <div>
                         <button
-                          className="deletebutton"
+                          className="questbutton"
+                          id="deletebutton"
                           onClick={() => this.deleteQuest(quest.id)}
                         >
                           &times;
                         </button>
                       </div>
                       <br />
-                    </ul>
-                  </div>
+                    </div>
+                  </ul>
                 );
               })}
             </div>
