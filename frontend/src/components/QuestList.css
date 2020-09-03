@@ -1,5 +1,4 @@
-.deletebutton {
-  background-color: tomato;
+.questbutton {
   border: none;
   border-radius: 20px;
   box-shadow: 0 8px 50px 0 rgba(0,0,0,0.2);
@@ -7,26 +6,19 @@
   cursor: pointer;
   text-align: center;
   text-decoration: none;
+  width:10%;
 }
 
-.editbutton {
+#deletebutton {
+  background-color: tomato;
+}
+#editbutton {
   background-color: steelblue;
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 8px 50px 0 rgba(0,0,0,0.2);
-  color: white;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  }
+}
 
-.newbutton {
+#newbutton {
   background-color: transparent;
-  border: none;
   color: rgb(105, 146, 112);
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
   margin: 5px 10px;
   padding: 10px 10px;
   width: 40%;
@@ -62,5 +54,5 @@
 
 #row-container {
   display: grid;
-  grid-template-columns: 40% 40% 10% 10%;
+  grid-template-columns: 4fr 4fr 1fr 1fr;
 }
