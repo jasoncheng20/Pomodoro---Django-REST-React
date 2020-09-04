@@ -6,7 +6,11 @@
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  width:10%;
+  width:100%;
+}
+
+.questbutton :hover {
+  box-shadow: 9 10px 50px 0 rgba(0,0,0,0.2)
 }
 
 #deletebutton {
@@ -25,11 +29,11 @@
 }
 
 .newbutton:hover {
-  color: rgb(14, 114, 58);
+  color: rgb(11, 99, 49);
 }
 
 .questbox {
-  background-color: #e2e3e7;
+  background-color: #ffda8a;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -54,5 +58,10 @@
 
 #row-container {
   display: grid;
-  grid-template-columns: 4fr 4fr 1fr 1fr;
+  grid-template-columns: 120px 120px 1fr 1fr;
+  grid-column-gap: 15px;
+  margin: 10px 20px 0px 20px;
+  padding: 5px 10px 0px 10px;
+  background-color: rgba(123, 107, 209, 0.2);
+  border-radius: 5px;
 }
