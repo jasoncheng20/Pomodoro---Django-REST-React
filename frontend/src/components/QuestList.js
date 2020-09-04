@@ -106,9 +106,6 @@ export default class QuestList extends Component {
       <div className="questlist">
         <h3>Quests</h3>
         <div className="questbox">
-          <button className="questbutton" id="newbutton" onClick={() => this.toggleCreateBox()}>
-            + Embark on a Quest
-          </button>
           <div>
             {this.state.showCreateBox 
               ? (<NewQuest createQuest={this.createQuest} closeWindow={this.toggleCreateBox}/>) 
@@ -149,7 +146,6 @@ export default class QuestList extends Component {
                 );
               })}
             </div>
-            <br />
             {this.state.showEditBox ? (
               <EditQuest
                 id={this.state.editId}
@@ -159,6 +155,9 @@ export default class QuestList extends Component {
               />
             ) : null}
           </div>
+          <button className="questbutton" id="newbutton" onClick={() => this.toggleCreateBox()}>
+              + Embark on a Quest
+          </button>
         </div>
       </div>
     );
